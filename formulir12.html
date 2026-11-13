@@ -216,6 +216,26 @@
   .status-msg.ok{color:var(--green); display:block;}
   .status-msg.err{color:var(--red); display:block;}
 
+  .download-dialog{
+    width:min(92vw, 520px); max-height:90vh; overflow:auto;
+    margin:auto; padding:28px; border:1px solid var(--line); border-radius:4px;
+    background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif;
+  }
+  .download-dialog::backdrop{background:rgba(17,17,16,0.65);}
+  .download-dialog h2{font-size:28px; margin-bottom:14px;}
+  .download-dialog p{font-size:14px; color:var(--asphalt); margin-bottom:12px;}
+  .download-dialog ol{padding-left:22px; margin-bottom:22px; font-size:14px;}
+  .download-dialog li{padding-left:4px; margin-bottom:8px;}
+  .dialog-actions{display:flex; flex-wrap:wrap; gap:10px;}
+  .dialog-actions a,.dialog-actions button{
+    display:inline-flex; justify-content:center; align-items:center;
+    min-height:46px; padding:12px 16px; border:1px solid var(--ink); border-radius:2px;
+    font:700 13px 'Inter',sans-serif; text-decoration:none; cursor:pointer;
+  }
+  .dialog-actions a{background:var(--green); border-color:var(--green); color:var(--white);}
+  .dialog-actions a svg{width:20px; height:20px; margin-right:8px; flex:none;}
+  .dialog-actions button{background:transparent; color:var(--ink);}
+
   footer{padding:28px 0 40px; text-align:center; font-size:12.5px; color:var(--asphalt);}
 
   /* ---------- tambahan umum (semua layar) ---------- */
@@ -648,6 +668,26 @@
   </div>
 </div>
 </form>
+
+<dialog class="download-dialog" id="downloadDialog" aria-labelledby="downloadDialogTitle">
+  <h2 id="downloadDialogTitle">Formulir berhasil diunduh</h2>
+  <p>Silakan lanjutkan pendaftaran melalui WhatsApp dengan langkah berikut:</p>
+  <ol>
+    <li>Buka WhatsApp melalui tombol di bawah dan lampirkan file JPG formulir yang baru diunduh.</li>
+    <li>Kirim formulir, lalu tunggu arahan admin mengenai pembayaran.</li>
+    <li>Setelah mendapat arahan, lakukan transfer dan kirim bukti transfer. Pendaftaran akan dikonfirmasi setelah pembayaran diperiksa admin.</li>
+  </ol>
+  <div class="dialog-actions">
+    <a id="sendWhatsAppBtn" href="https://wa.me/6285147267786" target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.34.65 4.53 1.777 6.396L4 29l7.79-1.746A11.93 11.93 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.75a9.71 9.71 0 0 1-4.95-1.354l-.355-.21-4.62 1.036 1.02-4.5-.232-.368A9.69 9.69 0 0 1 5.26 15c0-5.928 4.816-10.744 10.744-10.744 5.927 0 10.743 4.816 10.743 10.744 0 5.927-4.816 10.75-10.743 10.75z"/>
+        <path d="M21.63 17.86c-.297-.148-1.758-.868-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.253-.462-2.386-1.472-.882-.787-1.478-1.76-1.651-2.057-.173-.297-.019-.458.13-.606.134-.133.297-.347.446-.52.148-.174.198-.298.297-.496.099-.198.05-.372-.025-.52-.074-.149-.669-1.614-.917-2.21-.242-.581-.487-.502-.669-.512l-.57-.01c-.198 0-.52.074-.792.372-.273.297-1.04 1.017-1.04 2.481 0 1.464 1.065 2.878 1.213 3.076.148.198 2.098 3.204 5.084 4.492.71.306 1.263.489 1.694.626.712.227 1.36.195 1.873.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.412-.074-.124-.272-.198-.57-.347z"/>
+      </svg>
+      Lanjutkan ke WhatsApp
+    </a>
+    <button type="button" id="closeDownloadDialog">Tutup</button>
+  </div>
+</dialog>
 
 <footer>
   <div class="wrap">© 2026 Number Six Running Training — Data Anda bersifat rahasia dan tidak dibagikan tanpa izin.</div>
@@ -1306,6 +1346,11 @@
   const submitBtn = document.getElementById('submitBtn');
   const btnLabel = document.getElementById('btnLabel');
   const statusMsg = document.getElementById('statusMsg');
+  const downloadDialog = document.getElementById('downloadDialog');
+  const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
+  document.getElementById('closeDownloadDialog').addEventListener('click', function(){
+    downloadDialog.close();
+  });
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -1335,7 +1380,11 @@
       }
       buildJpg(data).then(function(){
         statusMsg.className = 'status-msg ok';
-        statusMsg.textContent = 'JPG berhasil dibuat dan diunduh. Terima kasih sudah mendaftar!';
+        statusMsg.textContent = 'JPG berhasil dibuat dan diunduh. Ikuti langkah selanjutnya pada pop-up.';
+        const message = 'Halo Admin Number Six Running, saya sudah mengisi formulir Program Lari 12 Menit atas nama ' +
+          (data.nama || '') + '. Saya akan melampirkan file JPG formulir dan menunggu arahan pembayaran.';
+        sendWhatsAppBtn.href = 'https://wa.me/6285147267786?text=' + encodeURIComponent(message);
+        downloadDialog.showModal();
       }).catch(function(err){
         console.error(err);
         statusMsg.className = 'status-msg err';
