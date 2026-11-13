@@ -373,6 +373,9 @@
   .modal-total .amt{font-size:22px; font-weight:800; color:var(--ink); font-family:'Inter',sans-serif;}
   .modal-actions{display:flex; gap:12px; margin-top:26px; flex-wrap:wrap;}
   .modal-actions .btn{flex:1; text-align:center;}
+  .modal-form-links{display:grid; gap:10px; margin-top:14px;}
+  .modal-form-links[hidden]{display:none;}
+  .modal-form-links .btn{text-align:center;}
 
   /* ---------- WHATSAPP FLOAT BUTTON ---------- */
   .wa-float{
@@ -541,7 +544,7 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
   <div class="wrap">
     <div class="section-head">
       <h2>PROGRAM<br>LATIHAN</h2>
-      <p>Pilih jalur online untuk latihan mandiri, atau offline untuk pendampingan langsung di lapangan.</p>
+      <p>Pilih latihan online atau paket program lari yang disesuaikan dengan target dan kebutuhan latihanmu.</p>
     </div>
 
     <div class="tabs" role="tablist">
@@ -569,88 +572,25 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
         <div class="card-tag">OFFLINE</div>
         <h3>Single Session Training</h3>
         <div class="price-row"><span>1x Pertemuan</span><span class="amt">Rp170.000</span></div>
-        <button type="button" class="card-cta" data-program="single-session">Pilih Program</button>
+        <button type="button" class="card-cta" data-program="single-session">Pilih program</button>
       </div>
       <div class="card">
         <div class="card-tag">OFFLINE · GROUP</div>
-        <h3>Running Class <span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:var(--asphalt); text-transform:none;">/ orang</span></h3>
-        <div class="calc-box" data-program="running-class">
-          <div class="calc-row">
-            <span>Pertemuan / Minggu</span>
-            <div class="stepper" data-calc="freq" data-min="2" data-max="7" data-value="2">
-              <button type="button" class="step-btn minus" aria-label="Kurangi">–</button>
-              <span class="step-value">2</span>
-              <button type="button" class="step-btn plus" aria-label="Tambah">+</button>
-            </div>
-          </div>
-          <div class="calc-row">
-            <span>Durasi (Minggu)</span>
-            <div class="stepper" data-calc="weeks" data-min="1" data-max="8" data-value="4">
-              <button type="button" class="step-btn minus" aria-label="Kurangi">–</button>
-              <span class="step-value">4</span>
-              <button type="button" class="step-btn plus" aria-label="Tambah">+</button>
-            </div>
-          </div>
-          <div class="calc-total">
-            <span>Total <span class="calc-total-sessions">8</span>x Pertemuan</span>
-            <span class="amt calc-total-price">Rp520.000</span>
-          </div>
-        </div>
-        <button type="button" class="card-cta" data-program="running-class">Pilih Program</button>
+        <h3>Running Class Level 1</h3>
+        <div class="price-row"><span>8x Pertemuan · 4 Minggu</span><span class="amt">Rp250.000</span></div>
+        <button type="button" class="card-cta" data-program="running-class-level-1">Pilih program</button>
       </div>
       <div class="card">
-        <div class="card-tag">OFFLINE · SEMI PRIVATE</div>
-        <h3>Semi Private <span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:var(--asphalt); text-transform:none;">(2 orang)</span></h3>
-        <div class="calc-box" data-program="semi-private">
-          <div class="calc-row">
-            <span>Pertemuan / Minggu</span>
-            <div class="stepper" data-calc="freq" data-min="2" data-max="7" data-value="2">
-              <button type="button" class="step-btn minus" aria-label="Kurangi">–</button>
-              <span class="step-value">2</span>
-              <button type="button" class="step-btn plus" aria-label="Tambah">+</button>
-            </div>
-          </div>
-          <div class="calc-row">
-            <span>Durasi (Minggu)</span>
-            <div class="stepper" data-calc="weeks" data-min="1" data-max="8" data-value="4">
-              <button type="button" class="step-btn minus" aria-label="Kurangi">–</button>
-              <span class="step-value">4</span>
-              <button type="button" class="step-btn plus" aria-label="Tambah">+</button>
-            </div>
-          </div>
-          <div class="calc-total">
-            <span>Total <span class="calc-total-sessions">8</span>x Pertemuan</span>
-            <span class="amt calc-total-price">Rp1.520.000</span>
-          </div>
-        </div>
-        <button type="button" class="card-cta" data-program="semi-private">Pilih Program</button>
+        <div class="card-tag">OFFLINE · GROUP</div>
+        <h3>Running Class Level 2</h3>
+        <div class="price-row"><span>8x Pertemuan · 4 Minggu</span><span class="amt">Rp520.000</span></div>
+        <button type="button" class="card-cta" data-program="running-class-level-2">Pilih program</button>
       </div>
       <div class="card">
         <div class="card-tag">OFFLINE · PRIVATE</div>
-        <h3>Private Offline</h3>
-        <div class="calc-box" data-program="private-offline">
-          <div class="calc-row">
-            <span>Pertemuan / Minggu</span>
-            <div class="stepper" data-calc="freq" data-min="2" data-max="7" data-value="2">
-              <button type="button" class="step-btn minus" aria-label="Kurangi">–</button>
-              <span class="step-value">2</span>
-              <button type="button" class="step-btn plus" aria-label="Tambah">+</button>
-            </div>
-          </div>
-          <div class="calc-row">
-            <span>Durasi (Minggu)</span>
-            <div class="stepper" data-calc="weeks" data-min="1" data-max="8" data-value="4">
-              <button type="button" class="step-btn minus" aria-label="Kurangi">–</button>
-              <span class="step-value">4</span>
-              <button type="button" class="step-btn plus" aria-label="Tambah">+</button>
-            </div>
-          </div>
-          <div class="calc-total">
-            <span>Total <span class="calc-total-sessions">8</span>x Pertemuan</span>
-            <span class="amt calc-total-price">Rp1.200.000</span>
-          </div>
-        </div>
-        <button type="button" class="card-cta" data-program="private-offline">Pilih Program</button>
+        <h3>Private Class <span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:var(--asphalt); text-transform:none;">(2 orang)</span></h3>
+        <div class="price-row"><span>8x Pertemuan · 4 Minggu</span><span class="amt">Rp1.200.000</span></div>
+        <button type="button" class="card-cta" data-program="private-class-duo">Pilih program</button>
       </div>
     </div>
 
@@ -674,7 +614,7 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
       <div class="step">
         <div class="num">01</div>
         <h3>Konsultasi & Pilih Program</h3>
-        <p>Ceritakan tujuan larimu dan pilih jalur online atau offline yang paling sesuai.</p>
+        <p>Ceritakan tujuan larimu dan pilih program yang paling sesuai dengan targetmu.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
@@ -699,15 +639,15 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
     <div class="faq-list">
       <div class="faq-item open">
         <button class="faq-q"><span>Apakah program ini cocok untuk pemula?</span><span class="plus">+</span></button>
-        <div class="faq-a"><p>Cocok. Program Run-Start dan Single Session Training dirancang sebagai titik mulai sebelum lanjut ke paket kelompok atau private.</p></div>
+        <div class="faq-a"><p>Cocok. Single Session Training bisa menjadi titik awal, lalu kamu dapat memilih Running Class atau Private Class sesuai kebutuhan latihan.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q"><span>Apa bedanya program online dan offline?</span><span class="plus">+</span></button>
-        <div class="faq-a"><p>Online berarti latihan mandiri dengan panduan terjadwal, sedangkan offline adalah sesi tatap muka langsung di lapangan bersama pelatih.</p></div>
+        <div class="faq-a"><p>Online berfokus pada panduan latihan mandiri, sedangkan program offline dilakukan tatap muka bersama coach.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q"><span>Apa bedanya Running Class dan Semi Private?</span><span class="plus">+</span></button>
-        <div class="faq-a"><p>Running Class dihitung per orang dalam kelompok, sedangkan Semi Private khusus untuk 2 orang dengan pendampingan yang lebih personal.</p></div>
+        <button class="faq-q"><span>Apa bedanya Running Class Level 1 dan Level 2?</span><span class="plus">+</span></button>
+        <div class="faq-a"><p>Level 1 adalah latihan kelompok dengan pendampingan coach. Level 2 menawarkan program custom yang lebih spesifik dan perhatian penuh dari coach. Keduanya berlangsung 2 kali seminggu selama 4 minggu.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q"><span>Apakah bisa upgrade paket di tengah program?</span><span class="plus">+</span></button>
@@ -767,6 +707,10 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
       <span>Total biaya</span>
       <span class="amt" id="modalPrice"></span>
     </div>
+    <div class="modal-form-links" id="modalFormLinks" hidden>
+      <a class="btn btn-primary" href="formulir12.html">Formulir Lari 12 Menit</a>
+      <a class="btn btn-ghost" href="formulir25.html">Formulir Lari Jarak Jauh</a>
+    </div>
     <div class="modal-actions">
       <button type="button" class="btn btn-ghost" id="modalCancel">Batal</button>
       <a class="btn btn-primary" id="modalConfirm" href="#" target="_blank" rel="noopener">Konfirmasi &amp; Gabung</a>
@@ -811,56 +755,6 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
     });
   });
 
-  /* ---------- Rupiah formatter ---------- */
-  function formatRupiah(n){
-    return 'Rp' + Math.round(n).toLocaleString('id-ID');
-  }
-
-  /* ---------- Meeting calculator (pertemuan/minggu × durasi) ---------- */
-  const RATE_PER_SESSION = {
-    'running-class': 65000,
-    'semi-private': 190000,
-    'private-offline': 150000
-  };
-
-  function updateCalc(calcBox){
-    const freqStepper = calcBox.querySelector('[data-calc="freq"]');
-    const weeksStepper = calcBox.querySelector('[data-calc="weeks"]');
-    const freq = parseInt(freqStepper.dataset.value, 10);
-    const weeks = parseInt(weeksStepper.dataset.value, 10);
-    const totalSessions = freq * weeks;
-    const rate = RATE_PER_SESSION[calcBox.dataset.program] || 0;
-    calcBox.querySelector('.calc-total-sessions').textContent = totalSessions;
-    calcBox.querySelector('.calc-total-price').textContent = formatRupiah(totalSessions * rate);
-  }
-
-  document.querySelectorAll('.calc-box').forEach(calcBox => {
-    calcBox.querySelectorAll('.stepper').forEach(stepper => {
-      const min = parseInt(stepper.dataset.min, 10);
-      const max = parseInt(stepper.dataset.max, 10);
-      const valueEl = stepper.querySelector('.step-value');
-      const minusBtn = stepper.querySelector('.minus');
-      const plusBtn = stepper.querySelector('.plus');
-
-      function render(){
-        const v = parseInt(stepper.dataset.value, 10);
-        valueEl.textContent = v;
-        minusBtn.disabled = v <= min;
-        plusBtn.disabled = v >= max;
-      }
-      minusBtn.addEventListener('click', () => {
-        let v = parseInt(stepper.dataset.value, 10);
-        if (v > min){ v--; stepper.dataset.value = v; render(); updateCalc(calcBox); }
-      });
-      plusBtn.addEventListener('click', () => {
-        let v = parseInt(stepper.dataset.value, 10);
-        if (v < max){ v++; stepper.dataset.value = v; render(); updateCalc(calcBox); }
-      });
-      render();
-    });
-    updateCalc(calcBox);
-  });
-
   /* ---------- Program detail popup ---------- */
   const WA_NUMBER = '6285147267786';
 
@@ -889,27 +783,28 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
     },
     'single-session': {
       tag: 'OFFLINE',
-      title: 'ingle Session Training',
-      desc: 'Satu kali sesi latihan tatap muka langsung di lapangan bersama coach. Cocok untuk mencoba metode latihan N6 sebelum mengambil paket yang lebih panjang.',
+      title: 'Single Session Training',
+      desc: 'Satu sesi latihan tatap muka bersama coach.',
       tiers: [{ label: '1x Pertemuan', price: 'Rp170.000' }]
     },
-    'running-class': {
+    'running-class-level-1': {
       tag: 'OFFLINE · GROUP',
-      title: 'Running Class (per orang)',
-      desc: 'Kelas lari kelompok tatap muka dengan pendampingan coach. Harga dihitung per orang. Atur sendiri jumlah pertemuan per minggu dan durasi programnya — total biaya otomatis terhitung.',
-      tiers: [{ label: '8x Pertemuan', price: 'Rp520.000' }]
+      title: 'Running Class Level 1',
+      desc: 'Latihan kelompok bersama coach, 2 kali seminggu selama 4 minggu (total 8 pertemuan). Pilih formulir sesuai target latihan Anda.',
+      formLinks: true,
+      tiers: [{ label: '8x Pertemuan · 2x/minggu selama 4 minggu', price: 'Rp250.000' }]
     },
-    'semi-private': {
-      tag: 'OFFLINE · SEMI PRIVATE',
-      title: 'Semi Private (2 orang)',
-      desc: 'Sesi tatap muka untuk 2 orang dengan pendampingan yang lebih personal dibanding kelas kelompok. Atur sendiri jumlah pertemuan per minggu dan durasi programnya — total biaya otomatis terhitung.',
-      tiers: [{ label: '8x Pertemuan', price: 'Rp1.520.000' }]
+    'running-class-level-2': {
+      tag: 'OFFLINE · GROUP',
+      title: 'Running Class Level 2',
+      desc: 'Latihan kelompok dengan program custom yang lebih spesifik sesuai kebutuhan dan target Anda, serta perhatian penuh dari coach selama 8 pertemuan (2 kali seminggu selama 4 minggu).',
+      tiers: [{ label: '8x Pertemuan · 2x/minggu selama 4 minggu', price: 'Rp520.000' }]
     },
-    'private-offline': {
+    'private-class-duo': {
       tag: 'OFFLINE · PRIVATE',
-      title: 'Private Offline',
-      desc: 'Sesi tatap muka satu-satu (one-on-one) dengan coach N6, fokus penuh pada teknik dan target larimu. Atur sendiri jumlah pertemuan per minggu dan durasi programnya — total biaya otomatis terhitung.',
-      tiers: [{ label: '8x Pertemuan', price: 'Rp1.200.000' }]
+      title: 'Private Class (2 orang)',
+      desc: 'Latihan private untuk 2 orang bersama coach, 2 kali seminggu selama 4 minggu (total 8 pertemuan).',
+      tiers: [{ label: '8x Pertemuan · 2x/minggu selama 4 minggu', price: 'Rp1.200.000' }]
     }
   };
 
@@ -922,13 +817,15 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
   const modalPrice = document.getElementById('modalPrice');
   const modalCancel = document.getElementById('modalCancel');
   const modalConfirm = document.getElementById('modalConfirm');
+  const modalFormLinks = document.getElementById('modalFormLinks');
   let activeSelection = 0;
 
   function setModalTierAndPrice(currentTier, data){
     modalPrice.textContent = currentTier.price;
     modalConfirm.href = 'https://wa.me/' + WA_NUMBER + '?text=' +
       encodeURIComponent('Halo N6, saya ingin bergabung program ' + data.title +
-        ' (' + currentTier.label + ', ' + currentTier.price + ').');
+        ' (' + currentTier.label + ', ' + currentTier.price + '). Mohon info jadwal dan rincian programnya.');
+    modalConfirm.textContent = 'Tanya & Pilih via WhatsApp';
   }
 
   function openModal(id, options){
@@ -940,6 +837,8 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
     modalTitle.textContent = data.title;
     modalDesc.textContent = data.desc;
     modalTiers.innerHTML = '';
+    modalFormLinks.hidden = !data.formLinks;
+    modalConfirm.style.display = '';
 
     if (data.buyList){
       modalTotalWrap.style.display = 'none';
@@ -961,7 +860,7 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
     }
 
     modalTotalWrap.style.display = '';
-    modalConfirm.style.display = '';
+    modalConfirm.style.display = data.formLinks ? 'none' : '';
     modalCancel.textContent = 'Batal';
     modalCancel.style.flex = '';
 
@@ -1008,24 +907,9 @@ cocok juga untuk Anda yang ingin mendapatkan nilai terbaik saat tes.</p>
   document.querySelectorAll('.card-cta[data-program]').forEach(btn => {
     btn.addEventListener('click', () => {
       const card = btn.closest('.card');
-      const calcBox = card.querySelector('.calc-box');
-
-      if (calcBox){
-        const freq = parseInt(calcBox.querySelector('[data-calc="freq"]').dataset.value, 10);
-        const weeks = parseInt(calcBox.querySelector('[data-calc="weeks"]').dataset.value, 10);
-        const totalSessions = freq * weeks;
-        const rate = RATE_PER_SESSION[btn.dataset.program] || 0;
-        openModal(btn.dataset.program, {
-          overrideTier: {
-            label: totalSessions + 'x Pertemuan (' + freq + 'x/minggu selama ' + weeks + ' minggu)',
-            price: formatRupiah(totalSessions * rate)
-          }
-        });
-      } else {
-        const selectedRow = card.querySelector('.tier-row.selected');
-        const presetIndex = selectedRow ? parseInt(selectedRow.dataset.tier, 10) : 0;
-        openModal(btn.dataset.program, { presetIndex: presetIndex });
-      }
+      const selectedRow = card.querySelector('.tier-row.selected');
+      const presetIndex = selectedRow ? parseInt(selectedRow.dataset.tier, 10) : 0;
+      openModal(btn.dataset.program, { presetIndex: presetIndex });
     });
   });
 
